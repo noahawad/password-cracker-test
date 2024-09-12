@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Cracker Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Password Cracker Test</h1>
+    <form id="passwordForm">
+        <label for="password">Enter Password to Test:</label>
+        <input type="text" id="password" name="password" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        // Store the password securely (for demonstration purposes)
+        // In a real scenario, passwords should be stored securely
+        const storedPassword = "securepassword123";
+
+        document.getElementById('passwordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const password = document.getElementById('password').value;
+
+            // Check if the entered password matches the stored password
+            const result = document.getElementById('result');
+            if (password === storedPassword) {
+                result.textContent = "Password is correct!";
+            } else {
+                result.textContent = "Password is incorrect!";
+            }
+        });
+    </script>
+</body>
+</html>
